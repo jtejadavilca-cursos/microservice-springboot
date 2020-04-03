@@ -9,12 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="cliente")
 public class ClientEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -31,15 +37,4 @@ public class ClientEntity implements Serializable {
 
 	@Column(name = "razon_social")
 	private String name;
-
-	public static void main(String[] args) {
-		ClientEntity client = new ClientEntity();
-		client.setName("Juan");
-		client.setCode("C0001");
-		
-		client.getName();
-		client.getCode();
-		
-		System.out.println("cliente : " + client);
-	}
 }
